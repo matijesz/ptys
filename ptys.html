@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cukiernia Ptyś | Tradycyjne Wypieki</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-beige: #f5f0e6; /* Delikatny, ciepły beż */
+            --ptys-pink: #a64d79; /* Ciemny róż z logo */
+            --ptys-light-pink: #d5a6bd; /* Jasny róż z logo */
+            --text-dark: #2d2d2d;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--bg-beige); 
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* Nawigacja */
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(245, 240, 230, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(166, 77, 121, 0.1);
+        }
+        .nav-logo { font-weight: 700; font-size: 1.5rem; color: var(--ptys-pink); letter-spacing: 2px; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 30px; }
+        nav ul li a { text-decoration: none; color: var(--text-dark); font-size: 0.9rem; font-weight: 400; transition: 0.3s; }
+        nav ul li a:hover { color: var(--ptys-pink); }
+
+        /* Hero Section */
+        header {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(245, 240, 230, 0.6), rgba(245, 240, 230, 0.6)), 
+                        url('https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1500&q=80') center/cover;
+        }
+        .hero-content { max-width: 800px; }
+        .hero-content h1 { font-size: 4rem; margin-bottom: 20px; color: var(--text-dark); }
+        .hero-content p { font-size: 1.2rem; font-style: italic; margin-bottom: 30px; color: var(--ptys-pink); }
+        .btn { 
+            padding: 15px 40px; 
+            background: var(--ptys-pink); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .btn:hover { background: var(--ptys-light-pink); transform: translateY(-3px); }
+
+        /* O nas */
+        section { padding: 100px 10%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .section-title div { width: 50px; height: 3px; background: var(--ptys-pink); margin: 0 auto; }
+
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-text p { margin-bottom: 20px; line-height: 1.8; }
+
+        /* Oferta (Karty) */
+        .offer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .offer-item { 
+            background: var(--white); 
+            padding: 40px; 
+            text-align: center; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: 0.3s;
+        }
+        .offer-item:hover { transform: translateY(-10px); }
+        .offer-item h3 { margin-bottom: 15px; color: var(--ptys-pink); }
+
+        /* Kontakt */
+        #kontakt { background: var(--white); border-radius: 50px 50px 0 0; }
+        .contact-container { text-align: center; }
+        .contact-info { margin-bottom: 40px; font-size: 1.1rem; }
+        
+        footer { 
+            background: #2d2d2d; 
+            color: #888; 
+            padding: 30px; 
+            text-align: center; 
+            font-size: 0.8rem; 
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">CUKIERNA PTYŚ</div>
+        <ul>
+            <li><a href="#o-nas">O nas</a></li>
+            <li><a href="#oferta">Słodkości</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="hero-content">
+            <h1>Słodka Chwila Przyjemności</h1>
+            <p>Tradycyjne receptury, naturalne składniki i serce włożone w każdy wypiek.</p>
+            <a href="#oferta" class="btn">Zobacz nasze wypieki</a>
+        </div>
+    </header>
+
+    <section id="o-nas">
+        <div class="section-title">
+            <h2>Nasza Historia</h2>
+            <div></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Cukiernia Ptyś to miejsce, w którym zapach świeżego ciasta i aromatycznej kawy wita Gości od samego progu. Od lat dbamy o to, by nasze desery kojarzyły się z domowym ciepłem i najwyższą jakością.</p>
+                <p>Specjalizujemy się w klasycznych wypiekach, ale nie boimy się nowoczesnych form. Nasze ptysie, bezy i torty przygotowujemy wyłącznie na bazie prawdziwego masła, śmietanki i sezonowych owoców.</p>
+            </div>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Wypieki" style="width: 100%; border-radius: 20px;">
+            </div>
+        </div>
+    </section>
+
+    <section id="oferta" style="background-color: rgba(213, 166, 189, 0.1);">
+        <div class="section-title">
+            <h2>Nasze Specjały</h2>
+            <div></div>
+        </div>
+        <div class="offer-grid">
+            <div class="offer-item">
+                <h3>Ptysie Królewskie</h3>
+                <p>Lekkie ciasto parzone z kremem według naszej tajnej receptury.</p>
+            </div>
+            <div class="offer-item">
+                <h3>Torty na zamówienie</h3>
+                <p>Artystyczne torty na wesela, urodziny i wyjątkowe okazje.</p>
+            </div>
+            <div class="offer-item">
+                <h3>Ciasta Domowe</h3>
+                <p>Serniki, szarlotki i drożdżówki, które smakują jak u babci.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt">
+        <div class="section-title">
+            <h2>Zapraszamy do Środka</h2>
+            <div></div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <p><strong>Adres:</strong> ul. Słodka 15, Twoje Miasto</p>
+                <p><strong>Telefon:</strong> +48 500 600 700</p>
+                <p><strong>E-mail:</strong> kontakt@cukierniaptys.pl</p>
+                <br>
+                <p>Pn. - Pt.: 8:00 - 18:00</p>
+                <p>Sobota: 9:00 - 16:00</p>
+            </div>
+            <p>Śledź nas na mediach społecznościowych!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Cukiernia Ptyś. Projekt wizytówki dla klienta.</p>
+    </footer>
+
+</body>
+</html>
